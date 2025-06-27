@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>📊 Inventory Summary Report</title>
+    <style>
+        body { font-family: Arial; padding: 20px; text-align: center; }
+        table { margin: auto; width: 60%; border-collapse: collapse; }
+        th, td { padding: 12px; border: 1px solid #ccc; }
+        th { background: #f9f9f9; }
+        a { display: inline-block; margin: 10px; padding: 8px 15px; background: #007bff; color: white; text-decoration: none; border-radius: 5px; }
+        a:hover { background: #0056b3; }
+    </style>
+</head>
+<body>
+    <h1>📊 End-of-Day Inventory Summary</h1>
+    <a href="{% url 'dashboard' %}">⬅️ Back to Dashboard</a>
+    <a href="{% url 'export_report' %}">⬇️ Export Report to Excel</a>
+    <table>
+        <tr>
+            <th>Product Name</th>
+            <th>Remaining Stock</th>
+        </tr>
+        {% for name, qty in stock_summary.items %}
+        <tr>
+            <td>{{ name }}</td>
+            <td>{{ qty }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

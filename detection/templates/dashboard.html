@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>📦 Smart Warehouse Dashboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
+        video, img { border: 2px solid #555; margin: 10px; }
+        a { margin: 10px; padding: 10px; background: #28a745; color: white; text-decoration: none; border-radius: 5px; }
+        a:hover { background: #218838; }
+    </style>
+</head>
+<body>
+    <h1>📦 Smart Warehouse Tracker</h1>
+    <img src="{% url 'video_feed' %}" width="720" height="480" alt="Live Feed">
+    <br>
+    <a href="{% url 'log' %}">📘 View Logs</a>
+    <a href="{% url 'report' %}">📊 End-of-Day Report</a>
+    <a href="{% url 'export_report' %}">⬇️ Export Excel</a>
+</body>
+</html>
